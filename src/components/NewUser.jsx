@@ -33,7 +33,7 @@ import useUsersContext from "../hooks/useUsersContext"
 const NewUser = () => {
     const [userName, setUserName] = useState('')
     // const {users, setUsers} = useContext(UsersContext)
-    const {users, setUsers} = useUsersContext(); // create custom hooks
+    const {users, addUser, deleteUser} = useUsersContext(); // create custom hooks
 
     const handleUserNameChange = (e) =>{
         setUserName(e.target.value);
@@ -42,7 +42,7 @@ const NewUser = () => {
         e.preventDefault(e);
         const newUser = {id: new Date().getTime().toString(), userName: userName}
         setUserName('')
-        setUsers((preveUsers) => [...preveUsers, newUser])
+        addUser(newUser)
     }
   return (
     <div>

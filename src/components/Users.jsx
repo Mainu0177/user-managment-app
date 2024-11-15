@@ -21,7 +21,7 @@ import useUsersContext from "../hooks/useUsersContext";
 // with context
 const Users = () => {
     // const {users, setUsers} = useContext(UsersContext)
-    const {users, setUsers} = useUsersContext(); // create custom hooks
+    const {users, addUser, deleteUser} = useUsersContext(); // create custom hooks
     return (
         <section className="users">
             {users.map((user) => (<User key={user.id} user={user}

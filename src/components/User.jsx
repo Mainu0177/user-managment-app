@@ -7,11 +7,10 @@ import useUsersContext from "../hooks/useUsersContext";
 const User = ({ user }) => {
     const {id, userName} = user;
     // const {users, setUsers} = useContext(UsersContext)
-    const {users, setUsers} = useUsersContext(); // create custom hooks
+    const {users, addUser, deleteUser} = useUsersContext(); // create custom hooks
 
     const handleDelete = (id) =>{
-        const filteredUsers = users.filter((user) => user.id != id);
-        setUsers(filteredUsers)
+        deleteUser(id)
     }
   return (
     <article className="user">
